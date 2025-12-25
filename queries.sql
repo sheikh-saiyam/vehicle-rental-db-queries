@@ -9,3 +9,17 @@ FROM
   bookings AS b
   INNER JOIN users AS u USING (user_id)
   INNER JOIN vehicles AS v USING (vehicle_id);
+
+SELECT
+  *
+FROM
+  vehicles
+WHERE
+  NOT EXISTS (
+    SELECT
+      vehicle_id
+    FROM
+      bookings
+    WHERE
+      bookings.vehicle_id = vehicles.vehicle_id
+  );
