@@ -27,3 +27,15 @@ WHERE
 
  
 SELECT * FROM vehicles WHERE status = 'available' AND type = 'car'
+
+
+SELECT
+  v.name AS vehicle_name,
+  COUNT(*) AS total_bookings
+FROM
+  bookings
+  JOIN vehicles AS v USING (vehicle_id)
+GROUP BY
+  v.name
+HAVING
+  COUNT(*) > 2
