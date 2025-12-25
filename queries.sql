@@ -10,6 +10,7 @@ FROM
   INNER JOIN users AS u USING (user_id)
   INNER JOIN vehicles AS v USING (vehicle_id);
 
+
 SELECT
   *
 FROM
@@ -23,3 +24,6 @@ WHERE
     WHERE
       bookings.vehicle_id = vehicles.vehicle_id
   );
+
+ 
+SELECT * FROM vehicles WHERE status = 'available' AND type = 'car'
