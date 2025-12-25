@@ -113,3 +113,7 @@ HAVING
 
 **Explanation:**
 This query groups bookings by vehicle and counts them. The HAVING clause filters groups to show only vehicles with more than 2 bookings, providing a summary of frequently booked vehicles.
+
+---
+
+**Made with ❤️ by Sheikh Saiyam**
