@@ -23,7 +23,9 @@ WHERE
       bookings
     WHERE
       bookings.vehicle_id = vehicles.vehicle_id
-  );
+  )
+ORDER BY
+  vehicles.vehicle_id ASC;
 
  
 SELECT * FROM vehicles WHERE status = 'available' AND type = 'car'
