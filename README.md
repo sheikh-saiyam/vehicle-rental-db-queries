@@ -58,18 +58,20 @@ Retrieve all vehicles that have never been booked.
 
 ```sql
 SELECT
-    *
+  *
 FROM
-    vehicles
+  vehicles
 WHERE
-    NOT EXISTS (
-        SELECT
-            vehicle_id
-        FROM
-            bookings
-        WHERE
-            bookings.vehicle_id = vehicles.vehicle_id
-    );
+  NOT EXISTS (
+    SELECT
+      vehicle_id
+    FROM
+      bookings
+    WHERE
+      bookings.vehicle_id = vehicles.vehicle_id
+  )
+ORDER BY
+  vehicles.vehicle_id ASC;
 ```
 
 **Explanation:**
